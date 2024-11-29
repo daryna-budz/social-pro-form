@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    background: linear-gradient(to right, #000000, #424CD2);
+    height: 100vh;
+    margin: 0; 
+    transition: background 0.5s ease; 
+  }
+
+  .container{
+    padding: 20px 50px;
+  }
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav img{
+    width: 142px;
+    height: 38px;
+    cursor: pointer;
+  }
+
+  .nav-links{
+    display: flex;
+    gap: 40px
+  }
+
+.nav-links a{
+    text-decoration: none;
+    color: #fff;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color:#246ffa;
+}
+
+
+.svg-waves{
+    position: fixed; 
+    bottom: -130px;         
+    left: 50%;        
+    transform: translateX(-50%); 
+    z-index: 1;
+    width: 100%;
+}
+
+.main-container{
+    margin-top: 50px;
+    display: flex;  
+    flex-direction: column;      
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container h1{
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 88px;
+    text-align: center;
+    margin-top: 75px;
+}
+
+.main-container h1 span{
+    background: linear-gradient(to bottom, #ece8fe, #757df4); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+.main-container p{
+    max-width: 525px;
+    color: #9EA3C6;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: -25px;
+}
+
+#main-btn,#next-btn{
+    padding: 20px 130px;
+    background-color: #fff;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    border: none;
+    border-radius: 100px;
+    margin-top: 50px;
+    z-index: 2;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#main-btn:hover, #next-btn:hover {
+    color: #fff;
+    background-color: #2f8dda;
+}
+
+
+/**/
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0b1d42;
+    width: 500px;
+    height: 550px;
+    z-index: 2;
+    border-radius: 40px;
+    position: fixed;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: left;
+
+    opacity: 0;
+    transform: translateY(30px); /* Початково зсунуто вниз */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%) translateY(30px);
+}
+
+.form-container h2{
+    color: #fff;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.form-container p{
+    color: #9EA3C6;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.dropdown-container, .creator-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.dropdown-input ,.creator-input{
+    width: 80vw;
+    max-width: 500px;
+    height: 7vh;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 1;
+    border-radius: 5px;
+    padding-left: 0;
+}
+
+.dropdown-list li {
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdown-list li:hover {
+    background-color: #adc4f9;
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.selected-tags span {
+    position: relative;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #424CD2;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.selected-tags span::after{
+    content: "✕"; 
+    margin-left: 8px; 
+    color: white; 
+    font-size: 14px; 
+    cursor: pointer;
+}
+
+.selected-tags span:hover {
+    background-color: #2f8dda;
+}
+
+#next-btn{
+    margin-top: auto;
+    align-self: flex-end;
+    padding: 20px 220px;
+}
+
+
+
+
+/* Стан, коли елемент прихований */
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* Забороняє взаємодію з елементом */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавний перехід */
+}
+
+/* Початкові стилі для formContainer (невидимий та зсунутий вниз) */
+.form-container {
+    opacity: 0;
+    transform: translateY(30px); /* Початково зсунуто вниз */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавний перехід */
+}
+
+/* Стилі для показу formContainer */
+.form-container.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0); /* Переміщаємо форму у її початкову позицію */
+    pointer-events: all; /* Дозволяємо взаємодію */
+}
+
+/* Стилі для mainContainer, щоб зникало плавно */
+.main-container {
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Плавний перехід для opacity */
+}
+
+.main-container.hidden {
+    opacity: 0;
+    pointer-events: none; /* Забороняємо взаємодію */
+}
+
+/*progress bar*/
+
